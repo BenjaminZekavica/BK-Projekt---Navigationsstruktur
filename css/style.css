@@ -1,0 +1,216 @@
+/* Autor: Benjamin Zekavica */
+
+/* Globale Einstellungen */
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Avenir, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  background-color: #036190;
+  color: white;
+  word-wrap: break-word;
+  -webkit-hyphens: auto;
+      -ms-hyphens: auto;
+          hyphens: auto;
+}
+
+a  {
+  color: white;
+  text-decoration: none;
+  transition: all .3s;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+
+a:hover {
+  color: #dadada;
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 1em;
+}
+
+/* Hauptnavigation */
+
+header.mainnavi-outer-wrapper {
+  -webkit-box-shadow: 1px 1px 4px #3e3e3e;
+  box-shadow: 1px 1px 4px #3e3e3e;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  background-color: white;
+  width: 100%;
+  min-height: 70px;
+}
+
+header.mainnavi-outer-wrapper a {
+  background-color: #256ca0;
+  display: block;
+  text-align: center;
+  width: 100%;
+  padding: 0.5em;
+}
+
+header.mainnavi-outer-wrapper a:hover {
+  background-color: #428ec7;
+  color: white;
+}
+
+ul.main-section {
+  padding: 1em 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+
+li {
+  list-style: none;
+  position: relative;
+  z-index: 1;
+  width: 19%;
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 19%;
+  flex: 0 0 19%;
+}
+
+/* Dropdown Menu klappt auf */
+/* Hover Effekt Anpassung */
+
+ul.child-dropdown-menu {
+  position: absolute;
+  z-index: 100;
+  left: 0;
+  top: 46px;
+  width: 100%;
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transform: translateY(-2em);
+          transform: translateY(-2em);
+  -webkit-transition: all 0.3s ease-in-out 0s, visibility 0s linear 0.3s, z-index 0s linear 0.01s;
+  transition: all 0.3s ease-in-out 0s, visibility 0s linear 0.3s, z-index 0s linear 0.01s;
+  -webkit-box-shadow: 1px 1px 4px #3e3e3e;
+  box-shadow: 1px 1px 4px #3e3e3e;
+}
+
+li.parent-items:hover ul.child-dropdown-menu {
+  visibility: visible;
+  opacity: 1;
+  -webkit-transform: translateY(0%);
+          transform: translateY(0%);
+  -webkit-transition-delay: 0s, 0s, 0.3s;
+          transition-delay: 0s, 0s, 0.3s;
+}
+
+/* Styling des Dropdown Menus */
+
+li.child-items {
+  width: 100%;
+  list-style: none;
+  border-top: 1px solid white;
+}
+
+/* Inhaltsbereich  */
+
+h1.headline-hell {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 0.5em;
+  margin-bottom: 1em;
+  font-weight: 600;
+  text-shadow: 1px 1px 12px #292929;
+}
+
+
+main {
+    margin: 10em 0 0 0;
+}
+
+
+/* Footer Anpassungen */
+
+.footer-inner {
+    padding: 3em 0;
+}
+
+.footer-inner p {
+   text-align: center;
+}
+
+
+/* Der erste Buchstabe soll groß dargstellt werden  */
+
+main p:first-letter {
+  font-weight: 600;
+  font-size: 47px;
+  float: left;
+  padding: 0 0.5em 0em 0;
+  text-shadow: 1px 1px 12px #292929;
+}
+
+
+/* Mobile Anpassung */
+
+@media screen and (max-width: 767px) {
+
+  /* Setzt das Menü auf 100% Höhe */
+
+  header.mainnavi-outer-wrapper  {
+    position: relative;
+    height: auto;
+    min-height: auto;
+  }
+
+  /* Bricht das Menü um */
+
+  ul.main-section  {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+
+  /* Die Menu Punkte werden 100% dargstellt */
+
+  li.parent-items {
+    width: 100%;
+    margin-bottom: 1em;
+  }
+
+  /* Gibt dem Inhalsbreich einen Abstand von oben und unten */
+
+  main {
+    margin: 3em 0 0 0;
+  }
+
+  /* Dropdown Menu Mobile Anpassung */
+
+
+  ul.child-dropdown-menu , ul.child-dropdown-menu:hover {
+      position: relative;
+      top: 3px;
+      display: block;
+      visibility: visible;
+      opacity: 1;
+      -webkit-transition: none;
+      transition: none;
+      -webkit-transform: translateY(0%);
+              transform: translateY(0%);
+  }
+
+}
